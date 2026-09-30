@@ -299,30 +299,75 @@ Kubernetes pulls image
 
 This project does **not** claim an Artifactory integration that has not been tested.
 
-## Current DevSecOps Direction
+## Additional Platform Engineering Practice
 
-The lab has now covered the core foundations:
+### 9. Terraform / Infrastructure as Code
+
+Terraform was practiced as a separate Infrastructure as Code exercise.
+
+The lab covered:
+
+- Terraform providers and resources
+- terraform init
+- terraform plan
+- terraform apply
+- Terraform state
+- terraform destroy
+- AzureRM provider
+- Creating and removing an Azure resource group
+
+Terraform was used as a separate learning exercise and is not integrated into the Kubernetes deployment in this repository.
+
+### 10. Prometheus monitoring
+
+Prometheus was installed into a dedicated Kubernetes namespace called `monitoring` using Helm.
+
+The lab covered:
+
+- Helm repository setup
+- Prometheus installation
+- Kubernetes namespaces
+- Prometheus services
+- Port-forwarding the Prometheus server
+- Basic PromQL queries such as `up`
+
+The Prometheus server was accessed through the local browser to verify that metrics could be queried.
+
+Grafana was studied conceptually as the visualization/dashboard layer for Prometheus, but was not installed in this lab.
+
+### 11. Platform and DevSecOps concepts
+
+The lab and related hands-on practice also covered:
+
+- Kubernetes RBAC and `kubectl auth can-i`
+- Container security fundamentals
+- Vulnerability scanning with Trivy
+- Linux/Bash troubleshooting
+- Artifactory as a private artifact/Docker registry concept
+- Ceph as distributed storage
+- Helm for Kubernetes package management
+
+Artifactory and Ceph were studied conceptually and are not claimed as implemented integrations.
+
+## Current Scope
+
+The project now demonstrates practical foundations across:
 
 - CI/CD
 - Docker
 - Kubernetes
-- Jenkins agents
-- Credentials handling
-- Artifact traceability
-- Container vulnerability scanning
+- Jenkins controller/agent architecture
+- Jenkins credentials and artifact handling
+- Kubernetes rolling updates
 - Kubernetes troubleshooting
-- Basic container/Kubernetes security concepts
-
-Potential future extensions include:
-
+- Container vulnerability scanning
 - Terraform / Infrastructure as Code
-- GitOps with Argo CD or Flux
-- Prometheus/Grafana monitoring
-- Artifactory integration
-- Kubernetes security hardening
-- Additional CI/CD security gates
+- Prometheus monitoring
+- Helm
+- Linux/Bash troubleshooting
+- Basic DevSecOps and platform engineering concepts
 
-These will only be marked as implemented after they are actually tested.
+GitOps/Argo CD and Artifactory integration are not implemented in this repository.
 
 ## Learning Outcomes
 
@@ -333,11 +378,14 @@ This project demonstrates practical understanding of:
 - Docker containerization
 - Kubernetes deployments and rolling updates
 - Kubernetes troubleshooting
-- Container security scanning
+- Container vulnerability scanning
 - Credential handling
 - Artifact traceability
+- Terraform / Infrastructure as Code fundamentals
+- Prometheus monitoring fundamentals
+- Helm-based Kubernetes installation
 - Linux/Bash-based automation
-- Basic DevSecOps workflow
+- Basic DevSecOps and platform engineering workflow
 
 ## Related Work
 
