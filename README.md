@@ -44,7 +44,6 @@ The lab was built incrementally to understand how source control, CI/CD automati
 - **kubectl** — Kubernetes administration and troubleshooting
 - **Python** — application and test workload
 - **Trivy** — container vulnerability scanning
-- **Linux/Bash** — automation and troubleshooting
 
 ## Implemented
 
@@ -185,8 +184,6 @@ This demonstrates:
 - Artifact traceability
 - Fingerprinting for identifying/tracking the exact artifact
 
-**Important distinction:** this stores the artifact in Jenkins. It is not an Artifactory upload.
-
 ### 8. Container vulnerability scanning
 
 Trivy was used to scan the container image for **HIGH** and **CRITICAL** vulnerabilities:
@@ -277,28 +274,6 @@ trivy image --severity HIGH,CRITICAL system-monitor:1.1
                               +---------------+
 ```
 
-## Artifactory
-
-**Artifactory has been studied as an artifact repository/private Docker registry concept, but it has not been implemented in this lab yet.**
-
-Typical production flow:
-
-```
-Jenkins
-   ↓
-docker build
-   ↓
-docker tag
-   ↓
-Artifactory
-   ↓
-docker push
-   ↓
-Kubernetes pulls image
-```
-
-This project does **not** claim an Artifactory integration that has not been tested.
-
 ## Additional Platform Engineering Practice
 
 ### 9. Terraform / Infrastructure as Code
@@ -342,7 +317,6 @@ The lab and related hands-on practice also covered:
 - Kubernetes RBAC and `kubectl auth can-i`
 - Container security fundamentals
 - Vulnerability scanning with Trivy
-- Linux/Bash troubleshooting
 - Artifactory as a private artifact/Docker registry concept
 - Ceph as distributed storage
 - Helm for Kubernetes package management
